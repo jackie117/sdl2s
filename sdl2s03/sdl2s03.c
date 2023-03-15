@@ -6,7 +6,6 @@
 /// 像素矩阵 = 每个像素的颜色值（RGB）的数列
 /// 
 #include <stdio.h>
-#include <stdbool.h>
 
 // 也可以设置中添加包含目录 如 D:\SDK\SDL2-2.26.4\include 、#include <SDL.h>
 #include "D:\SDK\SDL2-2.26.4\include\SDL.h"
@@ -18,6 +17,10 @@
 // 设置 utf-8 字符集
 // 显示中文标题是不会解释成GB编码
 #pragma execution_character_set("utf-8")
+
+// 或者使用标准库#include <stdbool.h>
+#define true	1
+#define false	0
 
 #define SDL_WINDOW_TITLE "我的 SDL 空窗口02"
 #define SDL_WINDOW_WIDTH 640
@@ -47,7 +50,7 @@ int InitWindow()
 int EventLoop()
 {
 	SDL_Event l_event;		//定义一个SDL消息
-	bool l_quit = false;	//消息循环的哨兵变量
+	_Bool l_quit = false;	//消息循环的哨兵变量
 	while (!l_quit)
 	{
 		SDL_WaitEvent(&l_event);

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 // 也可以设置中添加包含目录 如 D:\SDK\SDL2-2.26.4\include 、#include <SDL.h>
 #include "D:\SDK\SDL2-2.26.4\include\SDL.h"
@@ -13,6 +12,10 @@
 #pragma execution_character_set("utf-8")
 
 #define SDL_WINDOW_TITLE "我的 SDL 空窗口01"
+
+// 或者使用标准库#include <stdbool.h>
+#define true	1
+#define false	0
 
 int main()
 {
@@ -40,7 +43,7 @@ int main()
 
 	// 消息循环
 	SDL_Event l_event;	//定义一个SDL消息
-	bool l_quit = false;	//消息循环的哨兵变量
+	_Bool l_quit = false;	//消息循环的哨兵变量
 	while(!l_quit)
 	{
 		SDL_WaitEvent(&l_event);
